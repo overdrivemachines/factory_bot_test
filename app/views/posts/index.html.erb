@@ -1,7 +1,10 @@
 <p style="color: green"><%= notice %></p>
-
 <h1>Posts</h1>
-
+<% if current_user %>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, data: {turbo_method: :delete} %>
+<% else %>
+  <%= link_to "Login", new_user_session_path %>
+<% end %>
 <div id="posts">
   <% @posts.each do |post| %>
     <%= render post %>
@@ -10,5 +13,4 @@
     </p>
   <% end %>
 </div>
-
 <%= link_to "New post", new_post_path %>
