@@ -3,15 +3,11 @@
     <strong>Title:</strong>
     <%= post.title %>
   </p>
-
   <p>
     <strong>Content:</strong>
     <%= post.content %>
   </p>
-
   <p>
-    <strong>User:</strong>
-    <%= post.user_id %>
+    <%= image_tag(url_for(post.image)) if post.image.attached? %>
   </p>
-
 </div>
